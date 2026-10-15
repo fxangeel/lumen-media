@@ -16,8 +16,8 @@ RED = (239, 68, 68)
 RED_L = (254, 226, 226)
 
 # Inicio de cada escena (segundos). Se re-sincroniza con la voz.
-T = dict(hook=0.0, tres=3.1, uno=5.7, dos=11.2, tres_r=18.2, cta=23.6)
-DURATION = 30.5
+T = dict(hook=0.0, tres=2.55, uno=6.2, dos=11.0, tres_r=18.75, cta=24.0)  # sincronizado con voz Diego
+DURATION = 30.0
 
 
 def layer():
@@ -193,8 +193,8 @@ def scene_dos(img, t):
     # tarjeta de cuenta con problema
     p = ease_out((local - 0.3) / 0.5)
     if p > 0:
-        warn = ease_out((local - 1.9) / 0.4)
-        shake = math.sin(local * 40) * 10 * clamp(1 - abs(local - 2.2) / 0.4) if warn > 0 else 0
+        warn = ease_out((local - 3.2) / 0.4)
+        shake = math.sin(local * 40) * 10 * clamp(1 - abs(local - 3.5) / 0.4) if warn > 0 else 0
         lay = layer()
         box = (130 + shake, 650, W - 130 + shake, 960)
         shadow_card(lay, box, 40, p)
@@ -206,16 +206,16 @@ def scene_dos(img, t):
         sub = "Cuenta con problemas" if warn > 0.5 else "1,2 mil seguidores"
         d.text((box[0] + 200, 785), sub, font=font("Inter-Medium.otf", 34), fill=blend(GREY, RED, warn) + (a8,))
         if warn > 0:
-            r = 34 * back_out((local - 1.9) / 0.5)
+            r = 34 * back_out((local - 3.2) / 0.5)
             cx, cy = box[2] - 70, 700
             d.ellipse([cx - r, cy - r, cx + r, cy + r], fill=RED + (a8,))
             if r > 26:
                 text_center(d, cx, cy - 26, "!", font("Inter-Bold.otf", 46), WHITE + (a8,))
         img.alpha_composite(lay)
-        a2 = ease_out((local - 2.4) / 0.5)
+        a2 = ease_out((local - 4.6) / 0.5)
         fade_text(img, W / 2, 870 + 140, "Pierdes a tus clientes", font("Inter-SemiBold.otf", 48), RED, a2)
     # tarjeta web segura
-    p2 = ease_out((local - 4.6) / 0.6)
+    p2 = ease_out((local - 6.0) / 0.6)
     if p2 > 0:
         lay = layer()
         y = 1230 + (1 - p2) * 60
@@ -246,7 +246,7 @@ def scene_tres_r(img, t):
             icon_link(d, W / 2 - 240, cy, 90, WHITE)
             d.text((W / 2 - 160, cy - 34), "tunegocio.com", font=font("Inter-SemiBold.otf", 56), fill=WHITE)
         img.alpha_composite(lay)
-    items = [("Menú", 1.0), ("Precios", 2.0), ("Pedidos", 3.1)]
+    items = [("Menú", 1.1), ("Precios", 2.1), ("Pedidos", 3.0)]
     # línea que conecta el enlace con las tarjetas (detrás de ellas)
     last = -1
     for i, (_, st) in enumerate(items):
@@ -283,9 +283,9 @@ def scene_cta(img, t):
     a = ease_out((local - 0.15) / 0.5)
     fade_text(img, W / 2, 380, "Soy Angel,", font("Inter-Light.otf", 92), TURQ_L, a, dy=(1 - a) * 30)
     fade_text(img, W / 2, 500, "de Lumen Web Design", font("Inter-Bold.otf", 84), WHITE, a, dy=(1 - a) * 30)
-    a2 = ease_out((local - 1.9) / 0.5)
+    a2 = ease_out((local - 3.0) / 0.5)
     fade_text(img, W / 2, 680, "¿Hacemos la tuya?", font("Inter-SemiBold.otf", 72), TURQ, a2, dy=(1 - a2) * 30)
-    a3 = ease_out((local - 2.3) / 0.5)
+    a3 = ease_out((local - 2.4) / 0.5)
     if a3 > 0:
         lay = layer()
         d = ImageDraw.Draw(lay)

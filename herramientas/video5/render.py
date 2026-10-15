@@ -17,8 +17,8 @@ CREAM = (250, 243, 232)
 COFFEE = (120, 82, 58)
 
 # Inicio de cada escena (segundos). Se re-sincroniza con la voz.
-T = dict(hook=0.0, cuatro=3.0, p1=4.6, p2=10.0, p3=13.4, p4=16.8, facil=23.2, cta=25.0)
-DURATION = 30.5
+T = dict(hook=0.0, cuatro=2.6, p1=4.25, p2=9.5, p3=12.8, p4=16.05, facil=22.0, cta=23.2)  # sincronizado con voz Diego
+DURATION = 28.0
 STEPS = [("p1", "Conversamos", "por WhatsApp"), ("p2", "Primer diseño", "de tu web"),
          ("p3", "Lo ajustamos", "juntos"), ("p4", "La publico", "y te acompaño")]
 
@@ -276,7 +276,7 @@ def scene_p4(img, t):
         if lp > 0.85:
             text_center(d, cx, cy - 20, "En línea", font("Inter-SemiBold.otf", 34), WHITE)
         img.alpha_composite(lay)
-    items = [("Te enseño a usarla", 2.3), ("2 semanas de", 3.6)]
+    items = [("Te enseño a usarla", 1.8), ("2 semanas de", 3.3)]
     for i, (txt, st) in enumerate(items):
         ip = ease_out((local - st) / 0.5)
         if ip <= 0:
