@@ -41,7 +41,11 @@ IG3 = "Todos los paquetes incluyen ✨\n📱 Diseño que se ve perfecto en celul
 TK1 = "Hola, soy Angel 👋 Diseño páginas web para negocios de Venezuela y del exterior. Si tu negocio aún no tiene web, escríbeme por mensaje directo y te ayudo 💬"
 TK2 = "El café del video es solo un ejemplo: tu web lleva tu logo, tus colores y tus productos reales 🎨 ¿Qué te gustaría que tuviera la web de tu negocio? Cuéntame en los comentarios o por mensaje directo 👇"
 TK3 = "Todos los paquetes incluyen diseño para celular y computadora, botón de WhatsApp, optimización para Google, capacitación y 2 semanas de mantenimiento gratis ✨ ¿Cuál le vendría mejor a tu negocio? Escríbeme por mensaje directo y te hago tu cotización 💬"
-HT_IG = "#diseñoweb #paginasweb #webdesign #emprendedoresvenezolanos #aragua #maracay #venezuela #negociosvenezuela #marketingdigital #emprendimiento"
+IG4 = "Las redes sociales sirven para que te descubran, pero tu página web es donde te eligen 💡\n\nTu web le da a tu negocio una dirección propia que puedes poner en tu perfil, en tu tarjeta, en Google Maps y en tu estado de WhatsApp. Y trabaja las 24 horas, aunque no estés respondiendo mensajes 🕐\n\n¿Tu negocio ya tiene web o todavía vende solo por redes? Cuéntame en los comentarios 👇 o escríbeme por WhatsApp desde el enlace de mi biografía."
+IG5 = "Lo que necesito para empezar tu web 📝\n📸 Tu logo y fotos de tus productos o de tu local\n🎨 Tus colores\n📋 Tu menú, servicios o lista de precios\n📍 Tu dirección, horario y número de WhatsApp\n\nSi algo te falta, no pasa nada: lo vemos juntos en la primera conversación 🤝\n\n¿Qué es lo que más te frena para tener la página web de tu negocio? Te leo en los comentarios 👇 o escríbeme por WhatsApp desde el enlace de mi biografía."
+TK4 = "Tu web le da a tu negocio una dirección propia que puedes poner en tu perfil, en tu tarjeta y en Google Maps, y trabaja las 24 horas aunque no estés respondiendo mensajes 🕐 ¿Tu negocio ya tiene web o vende solo por redes? Cuéntame en los comentarios o escríbeme por mensaje directo 💬"
+TK5 = "Para empezar tu web solo necesito tu logo, fotos de tus productos, tu menú o lista de precios y tu WhatsApp 📝 Si algo te falta, lo vemos juntos 🤝 ¿Qué es lo que más te frena para tener tu página web? Cuéntame en los comentarios o escríbeme por mensaje directo 💬"
+HT_IG ="#diseñoweb #paginasweb #webdesign #emprendedoresvenezolanos #aragua #maracay #venezuela #negociosvenezuela #marketingdigital #emprendimiento"
 
 ROWS = [
     # n, video, fecha, hora, red, estado, enlace, descripcion, hashtags, archivo, portada
@@ -60,6 +64,16 @@ ROWS = [
     (3, "¿Cuánto cuesta una página web?", "lun 19/10/2026", "11:00 am", "TikTok", "Programado",
      "", TK3, "#diseñoweb #paginasweb #emprendedoresvenezolanos #venezuela #emprendimiento",
      "lumen-reel-03-cuanto-cuesta-una-web.mp4", "Primer fotograma"),
+    (4, "¿Tu negocio solo está en redes?", "mié 21/10/2026", "11:00 am", "Instagram", "Programado",
+     "", IG4, HT_IG, "lumen-reel-04-solo-en-redes.mp4", "Título (seg. 1,5)"),
+    (4, "¿Tu negocio solo está en redes?", "mié 21/10/2026", "11:00 am", "TikTok", "Programado",
+     "", TK4, "#diseñoweb #paginasweb #emprendedoresvenezolanos #venezuela #negocios",
+     "lumen-reel-04-solo-en-redes.mp4", "Primer fotograma"),
+    (5, "Así hago tu web en 4 pasos", "vie 23/10/2026", "11:00 am", "Instagram", "Programado",
+     "", IG5, HT_IG, "lumen-reel-05-proceso-4-pasos.mp4", "Título (seg. 1,8)"),
+    (5, "Así hago tu web en 4 pasos", "vie 23/10/2026", "11:00 am", "TikTok", "Programado",
+     "", TK5, "#diseñoweb #paginasweb #emprendedoresvenezolanos #venezuela #emprendimiento",
+     "lumen-reel-05-proceso-4-pasos.mp4", "Primer fotograma"),
 ]
 
 wb = Workbook()
@@ -179,10 +193,10 @@ for i, (k, f, fmt) in enumerate(items):
     b = sm.cell(row=r, column=2, value=f); body(b, center=True, bold=True); b.number_format = fmt
     b.fill = PatternFill("solid", fgColor=TURQ_L)
 r = 4 + len(items) + 1
-sm.cell(row=r, column=1, value="Créditos de voz (Higgsfield)").font = Font(name=F, bold=True, size=11, color=DEEP)
+sm.cell(row=r, column=1, value="Créditos de voz (ElevenLabs Starter)").font = Font(name=F, bold=True, size=11, color=DEEP)
 rows2 = [
-    ("Créditos disponibles", 4.9, "0.00", True),
-    ("Costo por video (aprox.)", 1.35, "0.00", True),
+    ("Créditos disponibles", 38848, "#,##0", True),
+    ("Costo por video (aprox.)", 400, "#,##0", True),
     ("Videos que alcanzan", f"=IFERROR(INT(B{r+1}/B{r+2}),0)", "0", False),
 ]
 for i, (k, v, fmt, is_input) in enumerate(rows2):
@@ -194,9 +208,10 @@ for i, (k, v, fmt, is_input) in enumerate(rows2):
     else:
         b.fill = PatternFill("solid", fgColor=TURQ_L); b.font = Font(name=F, size=10, bold=True)
 sm.cell(row=r + 5, column=1,
-        value="Fuente: saldo de tu cuenta de Higgsfield (15/10/2026) y costo cotizado por la voz de ~30 s.").font = Font(name=F, size=9, italic=True, color=GREY)
+        value="Fuente: tu cuenta de ElevenLabs (15/10/2026). Voz: Diego (desde el video 4). Los créditos se renuevan cada mes.").font = Font(name=F, size=9, italic=True, color=GREY)
 
 wb.move_sheet("Resumen", offset=-2)
 wb.active = 0
-wb.save("/home/claude/lumen/hoja/lumen-calendario-publicaciones.xlsx")
+import os
+wb.save(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "marca", "lumen-calendario-publicaciones.xlsx"))
 print("ok")
