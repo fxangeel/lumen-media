@@ -16,7 +16,7 @@ Repositorio de los videos de Lumen Web Design (marca de diseño web de Angel). T
    Guardar cada respuesta como `{"red": ..., "metricas": [IDs en el mismo orden], "filas": rows}` en un archivo temporal y correr `estadisticas.py importar ARCHIVO` (videos) o `estadisticas.py cuenta ARCHIVO` (cuenta).
 3. La primera vez que lleguen datos reales, revisar que las unidades tengan sentido (porcentajes entre 0 y 100, tiempo medio menor que la duración) y corregir el programa si no.
 4. `estadisticas.py tabla` da la comparación. Analizar con las reglas de la sección 2 de la guía, actualizar hipótesis, registro y, si se confirma algo en 3 o más videos, las reglas vigentes.
-5. Marcar cada análisis con `estadisticas.py analizado N RED 48h|7d`.
+5. Marcar cada análisis con `estadisticas.py analizado N RED 48h|7d`. Nunca marcar como analizada una publicación que todavía no tiene datos ("SIN DATOS todavía" en `pendientes`): se vuelve a intentar al día siguiente.
 6. Reconstruir el Excel: `python3 herramientas/hoja/build.py` (llena la pestaña Resultados con `analisis/estadisticas.json`).
 7. Subir a GitHub con un mensaje claro y avisar a Angel en pocas líneas: qué funcionó, qué no y qué cambia en el próximo video.
 
