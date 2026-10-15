@@ -111,60 +111,84 @@ ws.freeze_panes = "C5"
 ws.auto_filter.ref = f"A4:K{last}"
 
 # ---------------- Resultados ----------------
+# Los números salen de analisis/estadisticas.json (Metricool), que llena herramientas/analisis/estadisticas.py.
+import sys, os, json
+from datetime import datetime
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "analisis"))
+import estadisticas as E
+EST = E.cargar(E.DATOS, E.datos_vacios())
+VID = {v["n"]: v for v in E.cargar(E.VIDEOS, {"videos": []})["videos"]}
+ULT = E.ultimas(EST)
+
+def leads_de(n, red, estados=None):
+    return sum(1 for l in EST["leads"] if l.get("video") == n and l["red"] == red
+               and (estados is None or l.get("estado") in estados))
+
 rs = wb.create_sheet("Resultados")
 title(rs, "Resultados por publicación",
-      "Celdas amarillas: escribe los números de Metricool o de la app. Las columnas grises se calculan solas.")
-RH = ["N°", "Video", "Red", "Estado", "Vistas", "Alcance", "Me gusta", "Comentarios", "Guardados",
-      "Compartidos", "Interacciones", "Tasa de interacción", "Mensajes recibidos", "Clientes que cotizaron"]
-hdr(rs, 4, RH, [5, 30, 11, 13, 10, 10, 10, 12, 11, 12, 13, 13, 12, 13])
+      "Claude llena esta pestaña con los datos de Metricool (a las 48 h y a los 7 días de cada video). Las columnas grises se calculan solas.")
+RH = ["N°", "Video", "Red", "Estado", "Horas publicado", "Vistas", "Alcance", "Vio +3 s (IG) / completo (TT)",
+      "% visto", "Tiempo medio (s)", "Me gusta", "Comentarios", "Guardados", "Compartidos", "Interacciones",
+      "Tasa de interacción", "Seguidores 48 h", "Mensajes recibidos", "Clientes que cotizaron"]
+hdr(rs, 4, RH, [5, 30, 11, 13, 10, 10, 10, 14, 10, 11, 10, 12, 11, 12, 13, 13, 12, 12, 13])
+AUTO = "E6F7F4"
 for i, row in enumerate(ROWS):
     r = 5 + i
+    n, red = row[0], row[4].lower()
     vals = [f"=Calendario!A{r}", f"=Calendario!B{r}", f"=Calendario!E{r}", f"=Calendario!F{r}"]
     for col, v in enumerate(vals, start=1):
         c = rs.cell(row=r, column=col, value=v)
         body(c, center=col != 2, wrap=col == 2)
         c.font = Font(name=F, size=10, color="008000")
-    for col in range(5, 11):
-        c = rs.cell(row=r, column=col)
+    l = ULT.get((n, red))
+    d = l["datos"] if l else {}
+    x = E.derivadas(d, VID[n]["duracion_s"]) if l else {}
+    seg = E.seguidores_48h(EST, red, datetime.fromisoformat(VID[n]["publicacion"][red])) if n in VID else None
+    pct3 = d.get("vio_3s_pct") if red == "instagram" else d.get("vio_completo_pct")
+    datos = {5: l["horas_desde_publicacion"] if l else None, 6: d.get("vistas"), 7: d.get("alcance"),
+             8: pct3 / 100 if pct3 is not None else None,
+             9: x.get("pct_visto") / 100 if x.get("pct_visto") is not None else None,
+             10: x.get("tiempo_medio_s"), 11: d.get("me_gusta"), 12: d.get("comentarios"),
+             13: d.get("guardados"), 14: d.get("compartidos"), 17: seg,
+             18: leads_de(n, red) if l or leads_de(n, red) else None,
+             19: leads_de(n, red, ("cotizó", "compró")) if l or leads_de(n, red) else None}
+    for col, v in datos.items():
+        c = rs.cell(row=r, column=col, value=v)
         body(c, center=True)
-        c.fill = PatternFill("solid", fgColor=INPUT)
-        c.font = Font(name=F, size=10, color="0000FF")
-        c.number_format = "#,##0"
-    if row[4] == "TikTok":
-        rs.cell(row=r, column=9).value = None
-        rs.cell(row=r, column=9).fill = PatternFill("solid", fgColor="F1F5F9")
-    c = rs.cell(row=r, column=11, value=f"=IF(COUNT(G{r}:J{r})=0,\"\",SUM(G{r}:J{r}))")
+        c.fill = PatternFill("solid", fgColor=AUTO)
+        c.number_format = "0.0%" if col in (8, 9) else ("0.0" if col in (5, 10) else "#,##0")
+    if red == "tiktok":
+        c = rs.cell(row=r, column=13); c.value = None; c.fill = PatternFill("solid", fgColor="F1F5F9")
+    c = rs.cell(row=r, column=15, value=f"=IF(COUNT(K{r}:N{r})=0,\"\",SUM(K{r}:N{r}))")
     body(c, center=True); c.fill = PatternFill("solid", fgColor="F1F5F9"); c.number_format = "#,##0"
-    c = rs.cell(row=r, column=12, value=f"=IFERROR(IF(F{r}=\"\",\"\",K{r}/F{r}),\"\")")
+    c = rs.cell(row=r, column=16, value=f"=IFERROR(IF(G{r}=\"\",\"\",O{r}/G{r}),\"\")")
     body(c, center=True); c.fill = PatternFill("solid", fgColor="F1F5F9"); c.number_format = "0.0%"
-    for col in (13, 14):
-        c = rs.cell(row=r, column=col)
-        body(c, center=True)
-        c.fill = PatternFill("solid", fgColor=INPUT)
-        c.font = Font(name=F, size=10, color="0000FF")
     rs.row_dimensions[r].height = 30
 tr = 5 + len(ROWS)
-rs.cell(row=tr, column=2, value="Total")
+rs.cell(row=tr, column=2, value="Total / promedio")
 body(rs.cell(row=tr, column=2), bold=True)
-for col in range(5, 15):
+for col in range(6, 20):
     L = get_column_letter(col)
-    if col == 12:
-        f = f"=IFERROR(IF(F{tr}=0,\"\",K{tr}/F{tr}),\"\")"
-        fmt = "0.0%"
+    if col == 16:
+        f, fmt = f"=IFERROR(IF(G{tr}=0,\"\",O{tr}/G{tr}),\"\")", "0.0%"
+    elif col in (8, 9, 10):
+        f, fmt = f"=IFERROR(AVERAGE({L}5:{L}{tr-1}),\"\")", ("0.0%" if col != 10 else "0.0")
     else:
-        f = f"=SUM({L}5:{L}{tr-1})"
-        fmt = "#,##0"
+        f, fmt = f"=SUM({L}5:{L}{tr-1})", "#,##0"
     c = rs.cell(row=tr, column=col, value=f)
     body(c, center=True, bold=True)
     c.number_format = fmt
     c.fill = PatternFill("solid", fgColor=TURQ_L)
 note_r = tr + 2
+leido = max((l["leido"] for l in EST["lecturas"]), default=None)
 notes = [
     "Notas:",
-    "• Metricool todavía no muestra estadísticas (cuenta conectada hoy); suelen aparecer en unas 24 horas.",
-    "• Interacciones = Me gusta + Comentarios + Guardados + Compartidos. Tasa de interacción = Interacciones ÷ Alcance.",
-    "• TikTok no informa 'Guardados' por Metricool, por eso esa celda está en gris.",
-    "• Mensajes recibidos y Clientes que cotizaron: llévalos tú a mano; son los números que de verdad importan para vender.",
+    f"• Última lectura de Metricool: {leido[:16].replace('T', ' ') if leido else 'todavía sin datos (la cuenta se conectó el 15/10/2026)'}.",
+    "• Vio +3 s (Instagram): % de vistas que pasaron de los 3 primeros segundos; mide el gancho. Vio completo (TikTok): % que vio todo el video.",
+    "• % visto: parte del video que se ve en promedio. Interacciones = Me gusta + Comentarios + Guardados + Compartidos. Tasa = Interacciones ÷ Alcance.",
+    "• Seguidores 48 h: ganados el día de la publicación y el siguiente. TikTok no informa 'Guardados' por Metricool.",
+    "• Mensajes y clientes: cuéntale a Claude cuando te escriba alguien y de qué video viene; son los números que de verdad importan.",
+    "• Lo aprendido de cada video está en marca/guia-videos.md.",
 ]
 for i, n in enumerate(notes):
     c = rs.cell(row=note_r + i, column=2, value=n)
@@ -181,9 +205,10 @@ items = [
     ("Programadas", "=COUNTIF(Calendario!F5:F100,\"Programado\")", "0"),
     ("En Instagram", "=COUNTIF(Calendario!E5:E100,\"Instagram\")", "0"),
     ("En TikTok", "=COUNTIF(Calendario!E5:E100,\"TikTok\")", "0"),
-    ("Vistas totales", f"=Resultados!E{tr}", "#,##0"),
-    ("Mensajes recibidos", f"=Resultados!M{tr}", "#,##0"),
-    ("Clientes que cotizaron", f"=Resultados!N{tr}", "#,##0"),
+    ("Vistas totales", f"=Resultados!F{tr}", "#,##0"),
+    ("Seguidores ganados (48 h)", f"=Resultados!Q{tr}", "#,##0"),
+    ("Mensajes recibidos", f"=Resultados!R{tr}", "#,##0"),
+    ("Clientes que cotizaron", f"=Resultados!S{tr}", "#,##0"),
 ]
 sm.column_dimensions["A"].width = 28
 sm.column_dimensions["B"].width = 16
@@ -212,6 +237,5 @@ sm.cell(row=r + 5, column=1,
 
 wb.move_sheet("Resumen", offset=-2)
 wb.active = 0
-import os
 wb.save(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "marca", "lumen-calendario-publicaciones.xlsx"))
 print("ok")

@@ -1,0 +1,90 @@
+{
+  "_nota": "Ficha de cada video. Sirve para comparar qué variable (tipo, gancho, duración, voz, día) cambia los resultados. Agregar cada video nuevo aquí el mismo día que se programa.",
+  "videos": [
+    {
+      "n": 1,
+      "titulo": "Presentación de Lumen",
+      "tipo": "Presentación",
+      "gancho": "Hola, soy Angel",
+      "tipo_gancho": "presentación",
+      "duracion_s": 30.6,
+      "cta_s": 9.6,
+      "voz": "Andre (Higgsfield)",
+      "muestra_precio": false,
+      "negocio_ejemplo": "Tu negocio (genérico)",
+      "archivo": "reels/lumen-reel-01-presentacion.mp4",
+      "publicacion": {
+        "instagram": "2026-10-15T13:50:00-04:00",
+        "tiktok": "2026-10-15T15:46:00-04:00"
+      }
+    },
+    {
+      "n": 2,
+      "titulo": "Así se ve una web moderna en el teléfono",
+      "tipo": "Proceso",
+      "gancho": "¿Tus clientes te buscan desde el teléfono?",
+      "tipo_gancho": "pregunta",
+      "duracion_s": 28.2,
+      "cta_s": 6.0,
+      "voz": "Andre (Higgsfield)",
+      "muestra_precio": false,
+      "negocio_ejemplo": "Café Aurora",
+      "archivo": "reels/lumen-reel-02-web-en-el-telefono.mp4",
+      "publicacion": {
+        "instagram": "2026-10-17T11:00:00-04:00",
+        "tiktok": "2026-10-17T11:00:00-04:00"
+      }
+    },
+    {
+      "n": 3,
+      "titulo": "¿Cuánto cuesta una página web?",
+      "tipo": "Venta",
+      "gancho": "¿Cuánto cuesta una página web?",
+      "tipo_gancho": "pregunta",
+      "duracion_s": 33.0,
+      "cta_s": 4.6,
+      "voz": "Andre (Higgsfield)",
+      "muestra_precio": true,
+      "negocio_ejemplo": "ninguno",
+      "archivo": "reels/lumen-reel-03-cuanto-cuesta-una-web.mp4",
+      "publicacion": {
+        "instagram": "2026-10-19T11:00:00-04:00",
+        "tiktok": "2026-10-19T11:00:00-04:00"
+      }
+    },
+    {
+      "n": 4,
+      "titulo": "¿Tu negocio solo está en redes?",
+      "tipo": "Tip",
+      "gancho": "¿Tu negocio solo está en redes?",
+      "tipo_gancho": "pregunta",
+      "duracion_s": 30.0,
+      "cta_s": 6.0,
+      "voz": "Diego (ElevenLabs v4)",
+      "muestra_precio": false,
+      "negocio_ejemplo": "tu_negocio",
+      "archivo": "reels/lumen-reel-04-solo-en-redes.mp4",
+      "publicacion": {
+        "instagram": "2026-10-21T11:00:00-04:00",
+        "tiktok": "2026-10-21T11:00:00-04:00"
+      }
+    },
+    {
+      "n": 5,
+      "titulo": "Así hago tu web en 4 pasos",
+      "tipo": "Proceso",
+      "gancho": "¿Cómo se hace una página web con Lumen?",
+      "tipo_gancho": "pregunta",
+      "duracion_s": 28.0,
+      "cta_s": 4.8,
+      "voz": "Diego (ElevenLabs v4)",
+      "muestra_precio": false,
+      "negocio_ejemplo": "Café Aurora",
+      "archivo": "reels/lumen-reel-05-proceso-4-pasos.mp4",
+      "publicacion": {
+        "instagram": "2026-10-23T11:00:00-04:00",
+        "tiktok": "2026-10-23T11:00:00-04:00"
+      }
+    }
+  ]
+}
