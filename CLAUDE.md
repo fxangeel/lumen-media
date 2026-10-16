@@ -5,7 +5,8 @@ Repositorio de los videos de Lumen Web Design (marca de diseño web de Angel). T
 ## Antes de crear un video nuevo
 1. Leer `marca/guia-videos.md` completa y aplicar sus "Reglas vigentes".
 2. Si hay una hipótesis "Por probar" que este video pueda probar, cambiar solo esa variable y decirlo a Angel.
-3. El mismo día que se programa, agregar el video a `analisis/videos.json` (tipo, gancho, tipo de gancho, duración, segundos del cierre, voz, si muestra precios, negocio de ejemplo, fecha y hora de cada red).
+3. Portada: agregar el video a `PORTADAS` en `herramientas/portadas/portadas.py` (etiqueta, fondo alternando claro/oscuro con el video anterior, título corto con una palabra en acento), correr `python3 portadas.py N` y luego `sh con_portada.sh marca/portadas/lumen-portada-NN.png VIDEO.mp4 VIDEO-portada.mp4` en las dos versiones (Instagram y TikTok). Se programa siempre el archivo `-portada.mp4`. En Instagram además se pasa `videoThumbnailUrl` con la URL raw de la portada PNG. En TikTok (cuenta personal) Metricool no puede poner portada: por eso va como primer fotograma.
+4. El mismo día que se programa, agregar el video a `analisis/videos.json` (tipo, gancho, tipo de gancho, duración, segundos del cierre, voz, si muestra precios, negocio de ejemplo, fecha y hora de cada red).
 
 ## Análisis de estadísticas (Metricool, marca 7447240, zona horaria America/New_York = hora de Venezuela)
 1. `python3 herramientas/analisis/estadisticas.py pendientes` muestra qué publicaciones cumplieron 48 h o 7 días sin analizar.

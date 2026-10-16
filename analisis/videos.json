@@ -16,7 +16,8 @@
       "publicacion": {
         "instagram": "2026-10-15T13:50:00-04:00",
         "tiktok": "2026-10-15T15:46:00-04:00"
-      }
+      },
+      "portada": "marca/portadas/lumen-portada-01.png (poner a mano en la app)"
     },
     {
       "n": 2,
@@ -29,11 +30,12 @@
       "voz": "Andre (Higgsfield)",
       "muestra_precio": false,
       "negocio_ejemplo": "Café Aurora",
-      "archivo": "reels/lumen-reel-02-web-en-el-telefono.mp4",
+      "archivo": "reels/lumen-reel-02-web-en-el-telefono-portada.mp4",
       "publicacion": {
         "instagram": "2026-10-17T11:00:00-04:00",
         "tiktok": "2026-10-17T11:00:00-04:00"
-      }
+      },
+      "portada": "marca/portadas/lumen-portada-02.png"
     },
     {
       "n": 3,
@@ -46,11 +48,12 @@
       "voz": "Andre (Higgsfield)",
       "muestra_precio": true,
       "negocio_ejemplo": "ninguno",
-      "archivo": "reels/lumen-reel-03-cuanto-cuesta-una-web.mp4",
+      "archivo": "reels/lumen-reel-03-cuanto-cuesta-una-web-portada.mp4",
       "publicacion": {
         "instagram": "2026-10-19T11:00:00-04:00",
         "tiktok": "2026-10-19T11:00:00-04:00"
-      }
+      },
+      "portada": "marca/portadas/lumen-portada-03.png"
     },
     {
       "n": 4,
@@ -63,11 +66,12 @@
       "voz": "Diego (ElevenLabs v4)",
       "muestra_precio": false,
       "negocio_ejemplo": "tu_negocio",
-      "archivo": "reels/lumen-reel-04-solo-en-redes.mp4",
+      "archivo": "reels/lumen-reel-04-solo-en-redes-portada.mp4",
       "publicacion": {
         "instagram": "2026-10-21T11:00:00-04:00",
         "tiktok": "2026-10-21T11:00:00-04:00"
-      }
+      },
+      "portada": "marca/portadas/lumen-portada-04.png"
     },
     {
       "n": 5,
@@ -80,11 +84,12 @@
       "voz": "Diego (ElevenLabs v4)",
       "muestra_precio": false,
       "negocio_ejemplo": "Café Aurora",
-      "archivo": "reels/lumen-reel-05-proceso-4-pasos.mp4",
+      "archivo": "reels/lumen-reel-05-proceso-4-pasos-portada.mp4",
       "publicacion": {
         "instagram": "2026-10-23T11:00:00-04:00",
         "tiktok": "2026-10-23T11:00:00-04:00"
-      }
+      },
+      "portada": "marca/portadas/lumen-portada-05.png"
     },
     {
       "n": 6,
@@ -102,7 +107,8 @@
       "publicacion": {
         "instagram": "2026-10-16T12:15:00-04:00",
         "tiktok": "2026-10-16T12:15:00-04:00"
-      }
+      },
+      "portada": "marca/portadas/lumen-portada-06.png (poner a mano en la app)"
     }
   ]
 }
