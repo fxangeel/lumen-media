@@ -39,6 +39,7 @@ Instagram ya no comparte con Metricool los clics al enlace de la biografía, as�
 - No se dicen plazos de entrega. Precios: Básico desde 65 $, Intermedio desde 85 $, Completo desde 135 $; dominio gratis el 1er año solo en el Completo; todos con 2 semanas de mantenimiento gratis.
 - Descripciones: no repiten el video, aportan algo nuevo y cierran con una pregunta. Instagram: "enlace en mi biografía". TikTok: "escríbeme por mensaje directo".
 - Contenido marcado como hecho con IA. Rotación Tips / Proceso / Venta.
+- Frecuencia (desde el 16/10/2026): 1 video diario, todos los días, a las 11:00 am, en Instagram y TikTok. Cada domingo se prepara el lote de la semana y Angel lo aprueba antes de programarlo. A las 2 semanas se revisa si se pasa a 2 diarios.
 
 **Se ajustan con las estadísticas (estado actual = punto de partida, sin datos todavía):**
 - Formato vertical 1080x1920, 28 a 33 s.
@@ -59,6 +60,10 @@ Instagram ya no comparte con Metricool los clics al enlace de la biografía, as�
 | H7 | La voz Diego retiene igual o mejor que Andre. | Videos 1-3 (Andre) frente a 4-5 (Diego). Ojo: también cambia el tipo de video. | Por probar | – |
 
 ## 5. Registro de análisis (lo más reciente arriba)
+
+### 16/10/2026 · Cambio de frecuencia
+- Angel pasó de 3 videos por semana a 1 diario. El video 6 salió excepcionalmente a las 12:15 pm (se decidió el mismo día).
+- Nueva versión de cada video para TikTok: igual, pero el cierre dice "Escríbeme por mensaje directo" en lugar de "Enlace en la biografía".
 
 ### 15/10/2026 · Sistema creado
 - Metricool se conectó hoy (1:10 pm). Todavía no devuelve estadísticas de Reels ni de TikTok; suelen aparecer en unas 24 h.

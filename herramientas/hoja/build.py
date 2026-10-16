@@ -45,6 +45,8 @@ IG4 = "Las redes sociales sirven para que te descubran, pero tu página web es d
 IG5 = "Lo que necesito para empezar tu web 📝\n📸 Tu logo y fotos de tus productos o de tu local\n🎨 Tus colores\n📋 Tu menú, servicios o lista de precios\n📍 Tu dirección, horario y número de WhatsApp\n\nSi algo te falta, no pasa nada: lo vemos juntos en la primera conversación 🤝\n\n¿Qué es lo que más te frena para tener la página web de tu negocio? Te leo en los comentarios 👇 o escríbeme por WhatsApp desde el enlace de mi biografía."
 TK4 = "Tu web le da a tu negocio una dirección propia que puedes poner en tu perfil, en tu tarjeta y en Google Maps, y trabaja las 24 horas aunque no estés respondiendo mensajes 🕐 ¿Tu negocio ya tiene web o vende solo por redes? Cuéntame en los comentarios o escríbeme por mensaje directo 💬"
 TK5 = "Para empezar tu web solo necesito tu logo, fotos de tus productos, tu menú o lista de precios y tu WhatsApp 📝 Si algo te falta, lo vemos juntos 🤝 ¿Qué es lo que más te frena para tener tu página web? Cuéntame en los comentarios o escríbeme por mensaje directo 💬"
+IG6 = "Una web lenta no solo pierde visitas: Google también la muestra más abajo en los resultados 🔎\n\nY el botón de WhatsApp no es un detalle: es el camino más corto entre \"me interesa\" y \"quiero comprar\" 💬\n\n¿Cuál de estos 3 errores has visto más en las webs de negocios? Te leo en los comentarios 👇 o escríbeme por WhatsApp desde el enlace de mi biografía."
+TK6 = "Una web lenta también aparece más abajo en Google 🔎 y el botón de WhatsApp es el camino más corto entre \"me interesa\" y \"quiero comprar\" 💬 ¿Cuál de estos 3 errores has visto más? Cuéntame en los comentarios o escríbeme por mensaje directo"
 HT_IG ="#diseñoweb #paginasweb #webdesign #emprendedoresvenezolanos #aragua #maracay #venezuela #negociosvenezuela #marketingdigital #emprendimiento"
 
 ROWS = [
@@ -74,6 +76,11 @@ ROWS = [
     (5, "Así hago tu web en 4 pasos", "vie 23/10/2026", "11:00 am", "TikTok", "Programado",
      "", TK5, "#diseñoweb #paginasweb #emprendedoresvenezolanos #venezuela #emprendimiento",
      "lumen-reel-05-proceso-4-pasos.mp4", "Primer fotograma"),
+    (6, "3 errores que espantan clientes", "vie 16/10/2026", "12:15 pm", "Instagram", "Programado",
+     "", IG6, HT_IG, "lumen-reel-06-errores-que-espantan-clientes.mp4", "Título (seg. 1,8)"),
+    (6, "3 errores que espantan clientes", "vie 16/10/2026", "12:15 pm", "TikTok", "Programado",
+     "", TK6, "#diseñoweb #paginasweb #emprendedoresvenezolanos #venezuela #negocios",
+     "lumen-reel-06-errores-que-espantan-clientes-tiktok.mp4", "Primer fotograma"),
 ]
 
 wb = Workbook()
