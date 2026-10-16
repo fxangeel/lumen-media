@@ -103,12 +103,13 @@
       "muestra_precio": false,
       "negocio_ejemplo": "ninguno (web genérica)",
       "archivo": "reels/lumen-reel-06-errores-que-espantan-clientes.mp4",
-      "archivo_tiktok": "reels/lumen-reel-06-errores-que-espantan-clientes-tiktok.mp4",
+      "archivo_tiktok": "reels/lumen-reel-06-errores-que-espantan-clientes-tiktok-portada.mp4",
       "publicacion": {
         "instagram": "2026-10-16T12:15:00-04:00",
-        "tiktok": "2026-10-16T12:15:00-04:00"
+        "tiktok": "2026-10-16T18:00:00-04:00"
       },
-      "portada": "marca/portadas/lumen-portada-06.png (poner a mano en la app)"
+      "portada": "marca/portadas/lumen-portada-06.png (poner a mano en la app)",
+      "nota": "TikTok: primera subida (12:15 pm, sin portada) borrada por Angel y resubida a las 6:00 pm con portada."
     }
   ]
 }

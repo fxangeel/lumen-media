@@ -78,9 +78,9 @@ ROWS = [
      "lumen-reel-05-proceso-4-pasos.mp4", "Primer fotograma"),
     (6, "3 errores que espantan clientes", "vie 16/10/2026", "12:15 pm", "Instagram", "Programado",
      "", IG6, HT_IG, "lumen-reel-06-errores-que-espantan-clientes.mp4", "Título (seg. 1,8)"),
-    (6, "3 errores que espantan clientes", "vie 16/10/2026", "12:15 pm", "TikTok", "Programado",
+    (6, "3 errores que espantan clientes", "vie 16/10/2026", "6:00 pm", "TikTok", "Programado",
      "", TK6, "#diseñoweb #paginasweb #emprendedoresvenezolanos #venezuela #negocios",
-     "lumen-reel-06-errores-que-espantan-clientes-tiktok.mp4", "Primer fotograma"),
+     "lumen-reel-06-errores-que-espantan-clientes-tiktok-portada.mp4", "Primer fotograma"),
 ]
 
 wb = Workbook()
