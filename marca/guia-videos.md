@@ -36,7 +36,7 @@ Instagram ya no comparte con Metricool los clics al enlace de la biografía, as�
 - Marca Lumen: paleta #F7FAF9 · #082F34 · #14B8A6 · #CCFBF1 · #64748B, fuente Inter, logo A2, estilo minimalista.
 - Se presenta como Angel. Voz de IA: Diego (ElevenLabs, Eleven v4).
 - Negocios inventados (Café Aurora, tu_negocio); webs de clientes reales solo si Angel lo pide.
-- No se dicen plazos de entrega. Precios: Básico desde 65 $, Intermedio desde 85 $, Completo desde 135 $; dominio gratis el 1er año solo en el Completo; todos con 2 semanas de mantenimiento gratis.
+- No se dicen plazos de entrega. Precios (desde el 17/10/2026): Básico desde 50 $ (web informativa), Intermedio desde 75 $ (con reservas o pedidos), Completo desde 115 $ (portal con panel de control); dominio gratis el 1er año en todos los planes; todos con 2 semanas de mantenimiento gratis.
 - Descripciones: no repiten el video, aportan algo nuevo y cierran con una pregunta. Instagram: "enlace en mi biografía". TikTok: "escríbeme por mensaje directo".
 - Contenido marcado como hecho con IA. Rotación Tips / Proceso / Venta.
 - Frecuencia (desde el 16/10/2026): 1 video diario, todos los días, a las 11:00 am, en Instagram y TikTok. Cada domingo se prepara el lote de la semana y Angel lo aprueba antes de programarlo. A las 2 semanas se revisa si se pasa a 2 diarios.
